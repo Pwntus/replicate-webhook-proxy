@@ -1,0 +1,12 @@
+{
+  "name": "replicate-webhook-proxy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Pwntus/replicate-webhook-proxy.git",
+  "description": "",
+  "author": "Pwntus <pontus.edvard@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.13.0"
+  }
+}
