@@ -10,11 +10,19 @@ npm install replicate-webhook-proxy
 
 ## Usage
 
+Specify the following URL when [creating a Replicate prediction](https://replicate.com/docs/reference/http#predictions.create):
+
+```sh
+https://r3swiuknhh.execute-api.eu-west-1.amazonaws.com/prod/webhook?key=my_key
+```
+
+Change the `key` query parameter to a unique key / password. Then, in your browser / Node.js code:
+
 ```js
 // Import module
 const rwp = require("replicate-webhook-proxy");
 
-// Create a websocket client with a key / password
+// Create a websocket client with a key / password used in the prediction webhook URL
 const client = rwp("my_key");
 
 // Setup event listeners
@@ -24,7 +32,7 @@ client.on("message", (event) => console.log("onmessage", event.data));
 client.on("error", (event) => console.log("onerror", event.message));
 ```
 
-The `message` event returns an event with a `data` property of the following structure:
+The `message` event returns an `event.data` property with the following structure:
 
 ```js
 {
@@ -46,4 +54,6 @@ This NPM package let's you connect to a websocket endpoint and receive webhook e
 
 ## How?
 
-TBD
+A proxy in the middle will receive HTTP webhooks from a running Replicate model and relay them via Websockets to the client application.
+
+![How it works.](./demo.jpg)
