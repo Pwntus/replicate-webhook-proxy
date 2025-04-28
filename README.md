@@ -1,3 +1,5 @@
+# Disclaimer: Project is shut down and does not work!
+
 # Replicate Webhook Proxy
 
 Receive your [Replicate webhook](https://replicate.com/docs/webhooks) events through a websocket connection, right in your browser or Node.js code!
